@@ -1,0 +1,55 @@
+P -> program ID ; EP MSEN
+EP -> var DF
+EP -> epsilon
+DF -> IDM : TYPE ; DF
+DF -> IDM : TYPE ;
+IDM -> ID , IDM
+IDM -> ID
+MSEN -> begin SENM end
+SENM -> SEN ; SENM
+SENM -> SEN
+SEN -> ASS
+SEN -> IFS
+SEN -> WHI
+SEN -> REP
+SEN -> MSEN
+ASS -> ID := NUMEX
+IFS -> if BOOLEX then SEN
+IFS -> if BOOLEX then SEN else SEN
+WHI -> while BOOLEX do SEN
+REP -> repeat SEN until BOOLEX
+												NUMEX -> NUMEX + X
+												NUMEX -> NUMEX - X
+												NUMEX -> X
+NUMEX -> X NUMEX1
+NUMEX1 -> + X NUMEX1
+NUMEX1 -> - X NUMEX1
+NUMEX1 -> epsilon
+X -> YZ X1
+X1 -> * YZ X1
+X1 -> / YZ X1
+X1 -> epsilon
+YZ -> CAL
+YZ -> - YZ
+CAL -> NUM
+CAL -> ID
+CAL -> ( NUMEX )
+												BOOLEX -> BOOLEX or BOOLX
+												BOOLEX -> BOOLX
+BOOLEX -> BOOLX BOOLEX1
+BOOLEX1 -> or BOOLX BOOLEX1
+BOOLEX1 -> epsilon
+
+												BOOLX -> BOOLX and BOOLYZ
+												BOOLX -> BOOLYZ
+BOOLX -> BOOLYZ BOOLX1
+BOOLX1 -> and BOOLYZ BOOLX1
+BOOLX1 -> epsilon
+
+BOOLYZ -> BOOLL
+BOOLYZ -> not BOOLYZ
+BOOLL -> bool
+BOOLL -> ID
+BOOLL -> ( BOOLEX )
+BOOLL -> ID RELATION ID
+BOOLL -> NUMEX RELATION NUMEX

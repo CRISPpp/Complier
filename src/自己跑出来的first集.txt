@@ -1,0 +1,20 @@
+IFS -> if
+P -> program
+DF -> ID
+IDM -> ID
+EP -> var epsilon
+MSEN -> begin
+SENM -> ID if while repeat begin
+SEN -> ID if while repeat begin
+ASS -> ID
+WHI -> while
+REP -> repeat
+NUMEX -> NUM ID ( -
+X -> NUM ID ( -
+X1 -> * /
+YZ -> NUM ID ( -
+CAL -> NUM ID (
+BOOLEX -> bool ID ( NUM - not
+BOOLX -> bool ID ( NUM - not
+BOOLYZ -> bool ID ( NUM - not
+BOOLL -> bool ID ( NUM -
